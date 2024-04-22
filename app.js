@@ -37,12 +37,10 @@ for (let select of dropdowns){
         amtVal = "1";
         amount.value = "1";
      }
-     console.log(fromCurr.value, toCurr.value)
      const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
      let response = await fetch(URL);
      let data = await response.json();
      let rate = data.conversion_rate;
      let finalAmount = amtVal * rate;
      msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`
-     console.log("data is", finalAmount)
    })
